@@ -1,24 +1,25 @@
 # Cactus
 _So DRY it chafes._
 
-My attempt to write a super flexible but lightweight CSS grid framework taking things I learnt from building Minable.
+Cactus is a very minimal but flexible CSS grid framework powered by Scss. Rather than defining a list of potential column widths, Cactus lets you define your own and automatically generates the classes for you.
 
 
 
 ## Cacti Classes
 
 ### Cacti wrapper
-`.cacti-w`
-`.cacti-w.cacti-w-wide`
+`.cacti__wrapper`
+`.cacti__wrapper--wide`
 
 
 ### Cacti Group
-`.cacti-g`
-`.cacti-g.cacti-gutter-small`
-`.cacti-g.cacti-gutter-none`
+`.cacti__group`
+`.cacti__group`
+`.cacti__group`
 
 
 ### Cacti Unit
-`.cacti-u-1-2`
-`.cacti-u-m-1-8`
+`.cacti__unit--1-2`
+`.cacti__unit--l-13-19`
+`.cacti__unit--m-1-8`
 
