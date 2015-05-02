@@ -5,11 +5,12 @@
 // Cactus Config
 @import 'settings';
 
-// Cactus Framework
-@import 'framework/all';
-
 // 3rd Party Styles
 @import 'vendor/all';
+
+// Cactus Framework
+@import 'common/all';
+@import 'framework/all';
 
 // Site Styles
 @import 'components/all';
