@@ -4,13 +4,26 @@
 
 $cacti-base-font-size: 16px;
 
+$cacti-gutter-outer: true !default;
 $cacti-gutter: 32px;
 $cacti-gutter-small: 16px;
 
-// Cacti Wrapper
+// Wrapper
 $cacti-wrapper-width: 75em !default;
-$cacti-wrapper-wide-width: false !default;
+$cacti-wrapper-wide-width: 90em !default;
 
-// Cacti Units
-$min-grid-gutter: 2em !default;
-$min-grid-gutter-outer-enable: true !default;
+// Base grid generator
+$cacti-unit-ratios-base: 1 1, 1 2, 1 4, 3 4, 1 5, 2 5, 3 5, 4 5, 1 7, 1 27;
+
+// Grid Unit Config
+$break-l: 920px;
+$cacti-unit-ratios-l: 1 1, 1 2, 1 4, 3 4, 1 5, 2 5, 3 5, 4 5, 2 9;
+
+$break-m: 767px;
+$cacti-unit-ratios-m: 1 1, 1 2, 1 3, 2 3, 1 4, 3 4, 2 9;
+
+$break-s: 420px;
+$cacti-unit-ratios-s: 1 1, 1 2, 1 3, 2 3;
+
+// Build loop for Grid Generator
+$cacti-grid-generator: false false $cacti-unit-ratios-base, l $break-l $cacti-unit-ratios-l, m $break-m $cacti-unit-ratios-m, s $break-s $cacti-unit-ratios-s;

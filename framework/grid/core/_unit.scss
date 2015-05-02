@@ -1,8 +1,42 @@
-[class *= "cacti-u-"] {
+[class *= "cacti__unit"] {
   display: inline-block;
   font-size: $cacti-base-font-size;
-  vertical-align: top;
-
   padding-left: #{$cacti-usable-gutter}px;
   padding-right: #{$cacti-usable-gutter}px;
+  vertical-align: top;
 }
+
+@each $cacti-grid-breakpoint in $cacti-grid-generator {
+  $cacti-grid-breakpoint-name: nth($cacti-grid-breakpoint, 1);
+  $cacti-grid-breakpoint-unit-ratios: nth($cacti-grid-breakpoint, 3);
+
+  @if $cacti-grid-breakpoint-name {
+    $cacti-grid-breakpoint-width: strip-unit(nth($cacti-grid-breakpoint, 2)) / strip-unit($cacti-base-font-size);
+
+    @media (max-width: #{$cacti-grid-breakpoint-width}em) {
+      @each $cacti-grid-unit in $cacti-grid-breakpoint-unit-ratios {
+        $value-1: nth($cacti-grid-unit, 1);
+        $value-2: nth($cacti-grid-unit, 2);
+
+        $cacti-grid-unit-width: (100% / $value-2) * $value-1;
+
+        .cacti__unit--#{$cacti-grid-breakpoint-name}-#{$value-1}-#{$value-2} {
+          width: $cacti-grid-unit-width;
+        }
+      }
+    }
+  }
+
+  @else {
+    @each $cacti-grid-unit in $cacti-grid-breakpoint-unit-ratios {
+      $value-1: nth($cacti-grid-unit, 1);
+      $value-2: nth($cacti-grid-unit, 2);
+
+      $cacti-grid-unit-width: (100% / $value-2) * $value-1;
+
+      .cacti__unit--#{$value-1}-#{$value-2} {
+        width: $cacti-grid-unit-width;
+      }
+    }
+  }
+};

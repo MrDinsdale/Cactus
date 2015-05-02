@@ -1,0 +1,13 @@
+// Default settings
+$cacti-base-font-size: 16px !default;
+
+$cacti-gutter-outer: true !default;
+$cacti-gutter: 32px !default;
+$cacti-gutter-small: 16px !default;
+
+$cacti-wrapper-width: 60em !default;
+$cacti-wrapper-wide-width: false !default;
+
+// Base grid generator
+$cacti-unit-ratios-base: 1 1, 1 2 !default;
+$cacti-grid-generator: false false $cacti-unit-ratios-base !default;
