@@ -1,13 +1,13 @@
 // Default settings
-$cacti-base-font-size: 16px !default;
+$cactus-base-font-size: 16px !default;
 
-$cacti-gutter-outer: true !default;
-$cacti-gutter: 32px !default;
-$cacti-gutter-small: 16px !default;
+$cactus-gutter-outer: true !default;
+$cactus-gutter: 32px !default;
+$cactus-gutter-small: 16px !default;
 
-$cacti-wrapper-width: 60em !default;
-$cacti-wrapper-wide-width: false !default;
+$cactus-wrapper-width: 60em !default;
+$cactus-wrapper-wide-width: false !default;
 
 // Base grid generator
-$cacti-unit-ratios-base: 1 1, 1 2 !default;
-$cacti-grid-generator: false false $cacti-unit-ratios-base !default;
+$cactus-unit-ratios-base: 1 1, 1 2 !default;
+$cactus-grid-generator: false false $cactus-unit-ratios-base !default;

@@ -1,31 +1,31 @@
-.cacti__group {
+.cactus__group {
   display: -webkit-flex;
   -webkit-flex-flow: row wrap;
   display: -ms-flexbox;
   -ms-flex-flow: row wrap;
   font-size: 0;
 
-  @if $cacti-gutter-outer {
-    .cacti__group {
-      margin-left: -#{$cacti-usable-gutter}px;
-      margin-right: -#{$cacti-usable-gutter}px;
+  @if $cactus-gutter-outer {
+    .cactus__group {
+      margin-left: -#{$cactus-usable-gutter}px;
+      margin-right: -#{$cactus-usable-gutter}px;
     }
   }
 
   @else {
-    margin-left: -#{$cacti-usable-gutter}px;
-    margin-right: -#{$cacti-usable-gutter}px;
+    margin-left: -#{$cactus-usable-gutter}px;
+    margin-right: -#{$cactus-usable-gutter}px;
   }
 
 
-  @if $cacti-gutter-small {
+  @if $cactus-gutter-small {
     &--gutter-small {
-      margin-left: -#{$cacti-usable-gutter-small}px;
-      margin-right: -#{$cacti-usable-gutter-small}px;
+      margin-left: -#{$cactus-usable-gutter-small}px;
+      margin-right: -#{$cactus-usable-gutter-small}px;
 
-      > [class *= "cacti__unit"] {
-        padding-left: #{$cacti-usable-gutter-small}px;
-        padding-right: #{$cacti-usable-gutter-small}px;
+      > [class *= "cactus__unit"] {
+        padding-left: #{$cactus-usable-gutter-small}px;
+        padding-right: #{$cactus-usable-gutter-small}px;
       }
     }
   }
@@ -34,7 +34,7 @@
     margin-left: 0;
     margin-right: 0;
 
-    > [class *= "cacti__unit"] {
+    > [class *= "cactus__unit"] {
       padding-left: 0;
       padding-right: 0;
     }

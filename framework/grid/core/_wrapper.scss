@@ -1,10 +1,10 @@
-.cacti__wrapper {
+.cactus__wrapper {
   margin: 0 auto;
-  max-width: $cacti-wrapper-width;
+  max-width: $cactus-wrapper-width;
 
-  @if $cacti-wrapper-wide-width {
+  @if $cactus-wrapper-wide-width {
     &--wide {
-      max-width: $cacti-wrapper-wide-width;
+      max-width: $cactus-wrapper-wide-width;
     }
   }
 }

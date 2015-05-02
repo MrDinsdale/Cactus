@@ -2,28 +2,28 @@
   Cactus Grid Settings
 ==========================*/
 
-$cacti-base-font-size: 16px;
+$cactus-base-font-size: 16px;
 
-$cacti-gutter-outer: true !default;
-$cacti-gutter: 32px;
-$cacti-gutter-small: 16px;
+$cactus-gutter-outer: true !default;
+$cactus-gutter: 32px;
+$cactus-gutter-small: 16px;
 
 // Wrapper
-$cacti-wrapper-width: 75em !default;
-$cacti-wrapper-wide-width: 90em !default;
+$cactus-wrapper-width: 75em !default;
+$cactus-wrapper-wide-width: 90em !default;
 
 // Base grid generator
-$cacti-unit-ratios-base: 1 1, 1 2, 1 4, 3 4;
+$cactus-unit-ratios-base: 1 1, 1 2, 1 4, 3 4;
 
 // Grid Unit Config
 $break-l: 920px;
-$cacti-unit-ratios-l: 1 1, 1 2, 1 4, 3 4;
+$cactus-unit-ratios-l: 1 1, 1 2, 1 4, 3 4;
 
 $break-m: 767px;
-$cacti-unit-ratios-m: 1 1, 1 2;
+$cactus-unit-ratios-m: 1 1, 1 2;
 
 $break-s: 420px;
-$cacti-unit-ratios-s: 1 1;
+$cactus-unit-ratios-s: 1 1;
 
 // Build loop for Grid Generator
-$cacti-grid-generator: false false $cacti-unit-ratios-base, l $break-l $cacti-unit-ratios-l, m $break-m $cacti-unit-ratios-m, s $break-s $cacti-unit-ratios-s;
+$cactus-grid-generator: false false $cactus-unit-ratios-base, l $break-l $cactus-unit-ratios-l, m $break-m $cactus-unit-ratios-m, s $break-s $cactus-unit-ratios-s;
