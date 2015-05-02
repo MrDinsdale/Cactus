@@ -1,0 +1,32 @@
+.cacti-g {
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  display: -ms-flexbox;
+  -ms-flex-flow: row wrap;
+  font-size: 0;
+  margin-left: -#{$cacti-usable-gutter}px;
+  margin-right: -#{$cacti-usable-gutter}px;
+
+
+  @if $cacti-gutter-small {
+    &.cacti-gutter-small {
+      margin-left: -#{$cacti-usable-gutter-small}px;
+      margin-right: -#{$cacti-usable-gutter-small}px;
+
+      > [class *= "cacti-u-"] {
+        padding-left: #{$cacti-usable-gutter-small}px;
+        padding-right: #{$cacti-usable-gutter-small}px;
+      }
+    }
+  }
+
+  &.cacti-gutter-small {
+    margin-left: 0;
+    margin-right: 0;
+
+    > [class *= "cacti-u-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

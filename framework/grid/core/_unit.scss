@@ -1,0 +1,8 @@
+[class *= "cacti-u-"] {
+  display: inline-block;
+  font-size: $cacti-base-font-size;
+  vertical-align: top;
+
+  padding-left: #{$cacti-usable-gutter}px;
+  padding-right: #{$cacti-usable-gutter}px;
+}
