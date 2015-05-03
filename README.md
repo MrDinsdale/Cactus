@@ -45,10 +45,10 @@ The Unit defines the ratios of your columns aswell as breakpoints where it will 
 ``` html
 <div class="cactus__wrapper">
   <div class="cactus__group">
-    <div class="cacti__unit--3-4 cacti__unit--m-1-2">
+    <div class="cactus__unit--3-4 cactus__unit--m-1-2">
       <p>This content will be 3/4 width on large screens and 1/2 on medium screens.</p>
     </div>
-    <div class="cacti__unit--1-4 cacti__unit--m-1-2">
+    <div class="cactus__unit--1-4 cactus__unit--m-1-2">
       <p>This content will be 3/4 width on large screens and 1/2 on medium screens.</p>
     </div>
   </div>
