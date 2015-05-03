@@ -40,6 +40,20 @@ The Unit defines the ratios of your columns aswell as breakpoints where it will 
 .cactus__unit--m-1-8
 ```
 
+### Markup example
+
+``` html
+<div class="cactus__wrapper">
+  <div class="cactus__group">
+    <div class="cacti__unit--3-4 cacti__unit--m-1-2">
+      <p>This content will be 3/4 width on large screens and 1/2 on medium screens.</p>
+    </div>
+    <div class="cacti__unit--1-4 cacti__unit--m-1-2">
+      <p>This content will be 3/4 width on large screens and 1/2 on medium screens.</p>
+    </div>
+  </div>
+</div>
+```
 
 ## Cactus Grid Generator
 The Cactus Grid is defined by `$cactus-grid-generator`. It consits of an array of data for each breakpoint:
