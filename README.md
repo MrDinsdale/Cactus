@@ -1,3 +1,5 @@
+![Cactus Logo](http://joedinsdale.co.uk/misc/cactus-logo.png)
+
 # Cactus
 _**So DRY it chafes.**_
 
