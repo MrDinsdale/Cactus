@@ -96,8 +96,11 @@ The resulting Unit class will be named `cactus__unit--` followed by the breakpoi
 .cactus__unit--m-1-3
 .cactus__unit--m-2-3
 
-.cactus__unit--s-1-1
+.cactus__unit--s-1
 ```
+
+If the same innumerator and denominator are passed as a ratio it will automatically export the ratio as 1. So `1 1`, `2 2`, `3 3` etc would all convert to `.cactus__unit--1`, for this reason you should only ever declare one full width ratio or you will end up with duplicate classes.
+
 
 The breakpoint name can be set to anything you want, I tend to stick to `m` for medium and `l` for large etc however you could pass the breakpoint name `ipad2` and get the class:
 

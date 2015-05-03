@@ -20,7 +20,7 @@
 
         $cactus-grid-unit-width: (100% / $value-2) * $value-1;
 
-        @if $value-2 == 1 {
+        @if $value-2 == $value-1 {
           .cactus__unit--#{$cactus-grid-breakpoint-name}-1 {
             width: $cactus-grid-unit-width;
           }
@@ -42,7 +42,7 @@
 
       $cactus-grid-unit-width: (100% / $value-2) * $value-1;
 
-      @if $value-2 == 1 {
+      @if $value-2 == $value-1 {
         .cactus__unit--1 {
           width: $cactus-grid-unit-width;
         }
