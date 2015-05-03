@@ -12,18 +12,24 @@ Cactus makes use of BEM like naming convention for classes making for far more r
 ### Cactus wrapper
 The Wrapper element sets the max width `$cactus-wrapper-width: 960px;` of the content and centers it on the page:
 
-    .cactus__wrapper
+``` css
+.cactus__wrapper
+```
 
 An optional wide modifier can be set `$cactus-wrapper-width-wide: 1200px;`:
 
-    .cactus__wrapper--wide
+``` css
+.cactus__wrapper--wide
+```
 
 ### Cactus Group
 The Group element wraps out Units and is required to offset outer most gutter and set gutter modifiers to adjust their width.
 
-    .cactus__group
-    .cactus__group--gutter-small
-    .cactus__group--gutter-none
+``` css
+.cactus__group
+.cactus__group--gutter-small
+.cactus__group--gutter-none
+```
 
 ### Cactus Unit
 The Unit defines the ratios of your columns aswell as breakpoints where it will become effective.
