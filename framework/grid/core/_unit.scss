@@ -6,6 +6,10 @@
   vertical-align: top;
 }
 
+@function calculate-unit-width($numerator, $denominator) {
+  @return (100% / $denominator) * $numerator;
+}
+
 @each $cactus-grid-breakpoint in $cactus-grid-generator {
   $cactus-grid-breakpoint-name: nth($cactus-grid-breakpoint, 1);
   $cactus-grid-breakpoint-unit-ratios: nth($cactus-grid-breakpoint, 3);
@@ -17,8 +21,7 @@
       @each $cactus-grid-unit in $cactus-grid-breakpoint-unit-ratios {
         $value-1: nth($cactus-grid-unit, 1);
         $value-2: nth($cactus-grid-unit, 2);
-
-        $cactus-grid-unit-width: (100% / $value-2) * $value-1;
+        $cactus-grid-unit-width: calculate-unit-width($value-1, $value-2);
 
         @if $value-2 == $value-1 {
           .cactus__unit--#{$cactus-grid-breakpoint-name}-1 {
@@ -39,8 +42,7 @@
     @each $cactus-grid-unit in $cactus-grid-breakpoint-unit-ratios {
       $value-1: nth($cactus-grid-unit, 1);
       $value-2: nth($cactus-grid-unit, 2);
-
-      $cactus-grid-unit-width: (100% / $value-2) * $value-1;
+      $cactus-grid-unit-width: calculate-unit-width($value-1, $value-2);
 
       @if $value-2 == $value-1 {
         .cactus__unit--1 {
