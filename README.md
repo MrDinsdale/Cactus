@@ -7,7 +7,16 @@ Cactus is a very minimal but flexible CSS grid framework powered by Scss. Rather
 
 
 ## Cactus Classes
-Cactus makes use of BEM like naming convention for classes making for far more readible markup:
+Cactus makes use of BEM like naming convention for classes making for far more readable markup, if you're not familiar it stands for Block Element Modifier. It follows this basic structure:
+
+``` scss
+.block {}
+.block__element {}
+.block--modifier {}
+.block__element--modifier {}
+```
+
+For more information have a look at [MindBEMding - Getting your head round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) by Harry Roberts, its a great read!
 
 ### Cactus wrapper
 The Wrapper element sets the max width `$cactus-wrapper-width` of the content and centers it on the page, by default this is 60em (960px).
