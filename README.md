@@ -1,7 +1,6 @@
 ![Cactus Logo](http://joedinsdale.co.uk/misc/cactus-logo.png)
 
-# Cactus
-_**So DRY it chafes.**_
+# Cactus CSS Framework
 
 Cactus is a very minimal but flexible CSS grid framework powered by Scss. Rather than defining a list of potential column widths, Cactus lets you define your own and automatically generates the classes for you.
 
