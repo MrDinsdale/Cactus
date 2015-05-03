@@ -20,8 +20,16 @@
 
         $cactus-grid-unit-width: (100% / $value-2) * $value-1;
 
-        .cactus__unit--#{$cactus-grid-breakpoint-name}-#{$value-1}-#{$value-2} {
-          width: $cactus-grid-unit-width;
+        @if $value-2 == 1 {
+          .cactus__unit--#{$cactus-grid-breakpoint-name}-1 {
+            width: $cactus-grid-unit-width;
+          }
+        }
+
+        @else {
+          .cactus__unit--#{$cactus-grid-breakpoint-name}-#{$value-1}-#{$value-2} {
+            width: $cactus-grid-unit-width;
+          }
         }
       }
     }
@@ -34,8 +42,16 @@
 
       $cactus-grid-unit-width: (100% / $value-2) * $value-1;
 
-      .cactus__unit--#{$value-1}-#{$value-2} {
-        width: $cactus-grid-unit-width;
+      @if $value-2 == 1 {
+        .cactus__unit--1 {
+          width: $cactus-grid-unit-width;
+        }
+      }
+
+      @else {
+        .cactus__unit--#{$value-1}-#{$value-2} {
+          width: $cactus-grid-unit-width;
+        }
       }
     }
   }
