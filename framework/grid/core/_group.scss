@@ -7,25 +7,25 @@
 
   @if $cactus-gutter-outer {
     .cactus__group {
-      margin-left: -#{$cactus-usable-gutter}px;
-      margin-right: -#{$cactus-usable-gutter}px;
+      margin-left: -$cactus-usable-gutter * 1px;
+      margin-right: -$cactus-usable-gutter * 1px;
     }
   }
 
   @else {
-    margin-left: -#{$cactus-usable-gutter}px;
-    margin-right: -#{$cactus-usable-gutter}px;
+    margin-left: -$cactus-usable-gutter * 1px;
+    margin-right: -$cactus-usable-gutter * 1px;
   }
 
 
   @if $cactus-gutter-small {
     &--gutter-small {
-      margin-left: -#{$cactus-usable-gutter-small}px;
-      margin-right: -#{$cactus-usable-gutter-small}px;
+      margin-left: -$cactus-usable-gutter-small * 1px;
+      margin-right: -$cactus-usable-gutter-small * 1px;
 
       > [class *= "cactus__unit"] {
-        padding-left: #{$cactus-usable-gutter-small}px;
-        padding-right: #{$cactus-usable-gutter-small}px;
+        padding-left: $cactus-usable-gutter-small * 1px;
+        padding-right: $cactus-usable-gutter-small * 1px;
       }
     }
   }
