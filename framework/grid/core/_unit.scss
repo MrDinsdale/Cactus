@@ -1,8 +1,8 @@
 [class *= "cactus__unit"] {
   display: inline-block;
   font-size: $cactus-base-font-size;
-  padding-left: #{$cactus-usable-gutter}px;
-  padding-right: #{$cactus-usable-gutter}px;
+  padding-left: $cactus-usable-gutter * 1px;
+  padding-right: $cactus-usable-gutter * 1px;
   vertical-align: top;
 }
 
