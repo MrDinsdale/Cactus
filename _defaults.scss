@@ -1,0 +1,23 @@
+/*==========================
+  Cactus Grid Settings
+==========================*/
+
+$cactus-base-font-size: 16px !default;
+
+$cactus-gutter-outer: true !default;
+$cactus-gutter: 32px !default;
+$cactus-gutter-small: 16px !default;
+
+// Wrapper
+$cactus-wrapper-width: 75em !default;
+$cactus-wrapper-wide-width: 90em !default;
+
+// Base grid generator
+$cactus-unit-ratios-base: 1 1, 1 2, 1 4, 3 4 !default;
+
+// Grid Unit Config
+$break-m: 767px !default;
+$cactus-unit-ratios-m: 1 1, 1 2 !default;
+
+// Build loop for Grid Generator
+$cactus-grid-generator: false false $cactus-unit-ratios-base, m $break-m $cactus-unit-ratios-m !default;
