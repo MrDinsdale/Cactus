@@ -1,4 +1,4 @@
-[class *= "cactus__unit"] {
+[class *= "cactus__u"] {
   display: inline-block;
   font-size: $cactus-base-font-size;
   padding-left: $cactus-usable-gutter * 1px;
@@ -24,13 +24,13 @@
         $cactus-grid-unit-width: calculate-unit-width($value-1, $value-2);
 
         @if $value-2 == $value-1 {
-          .cactus__unit--#{$cactus-grid-breakpoint-name}-1 {
+          .cactus__u--#{$cactus-grid-breakpoint-name}-1 {
             width: $cactus-grid-unit-width;
           }
         }
 
         @else {
-          .cactus__unit--#{$cactus-grid-breakpoint-name}-#{$value-1}-#{$value-2} {
+          .cactus__u--#{$cactus-grid-breakpoint-name}-#{$value-1}-#{$value-2} {
             width: $cactus-grid-unit-width;
           }
         }
@@ -45,13 +45,13 @@
       $cactus-grid-unit-width: calculate-unit-width($value-1, $value-2);
 
       @if $value-2 == $value-1 {
-        .cactus__unit--1 {
+        .cactus__u--1 {
           width: $cactus-grid-unit-width;
         }
       }
 
       @else {
-        .cactus__unit--#{$value-1}-#{$value-2} {
+        .cactus__u--#{$value-1}-#{$value-2} {
           width: $cactus-grid-unit-width;
         }
       }

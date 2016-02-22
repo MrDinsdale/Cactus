@@ -1,0 +1,15 @@
+/* ========================================
+Allows revesed order on a row of units
+
+Usage:
+  .cactus__g.cactus__row-reverse
+    .cactus__u--1-3...
+ ======================================== */
+
+.cactus__row-reverse {
+  direction: rtl;
+
+  & > [class*='cactus__unit'] {
+    direction: ltr;
+  }
+}
