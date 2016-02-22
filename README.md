@@ -21,42 +21,42 @@ For more information have a look at [MindBEMding - Getting your head round BEM s
 The Wrapper element sets the max width `$cactus-wrapper-width` of the content and centers it on the page, by default this is 60em (960px).
 
 ``` scss
-.cactus__wrapper
+.cactus__w
 ```
 
 An optional wide modifier can be set `$cactus-wrapper-width-wide`, by default this is set to false.
 
 ``` scss
-.cactus__wrapper--wide
+.cactus__w--wide
 ```
 
 ### Cactus Group
-The Group element wraps Units, it also allows us to adjust the gutter on direct descendant `cactus__unit` elements.
+The Group element wraps Units, it also allows us to adjust the gutter on direct descendant `cactus__u` elements.
 
 ``` scss
-.cactus__group // Default gutter width set by $cactus-gutter, 32px default.
-.cactus__group--gutter-small // Sets gutter to value of $cactus-gutter-small, 8px default.
-.cactus__group--gutter-none // Removes gutter.
+.cactus__g // Default gutter width set by $cactus-gutter, 32px default.
+.cactus__g--gutter-small // Sets gutter to value of $cactus-gutter-small, 8px default.
+.cactus__g--gutter-none // Removes gutter.
 ```
 
 ### Cactus Unit
 The Unit defines the ratios of your columns as well as breakpoints where it will become effective.
 
 ``` scss
-.cactus__unit--1-2 // 1/2 width unit with no specified breakpoint
-.cactus__unit--l-13-19 // 13/19 width unit at the large breakpoint (for some insane layouts)
-.cactus__unit--m-1-8 // 1/8 width at the medium breakpoint
+.cactus__u--1-2 // 1/2 width unit with no specified breakpoint
+.cactus__u--l-13-19 // 13/19 width unit at the large breakpoint (for some insane layouts)
+.cactus__u--m-1-8 // 1/8 width at the medium breakpoint
 ```
 
 ### Markup example
 
 ``` html
-<div class="cactus__wrapper">
-  <div class="cactus__group">
-    <div class="cactus__unit--3-4 cactus__unit--m-1-2">
+<div class="cactus__w">
+  <div class="cactus__g">
+    <div class="cactus__u--3-4 cactus__u--m-1-2">
       <p>This content will be 3/4 width on large screens and 1/2 on medium screens.</p>
     </div>
-    <div class="cactus__unit--1-4 cactus__unit--m-1-2">
+    <div class="cactus__u--1-4 cactus__u--m-1-2">
       <p>This content will be 3/4 width on large screens and 1/2 on medium screens.</p>
     </div>
   </div>
@@ -86,25 +86,25 @@ $cactus-grid-generator: false false $cactus-unit-ratios-base, m $break-m $cactus
 
 Passing `false` to the name and width properties will remove any breakpoint so any relevant Unit classes will not be wrapped in media queries.
 
-The resulting Unit class will be named `cactus__unit--` followed by the breakpoint name (if set) and the ratios supplied. The example above would provide the following:
+The resulting Unit class will be named `cactus__u--` followed by the breakpoint name (if set) and the ratios supplied. The example above would provide the following:
 
 ``` scss
-.cactus__unit--1-4
-.cactus__unit--3-4
+.cactus__u--1-4
+.cactus__u--3-4
 
-.cactus__unit--m-1-3
-.cactus__unit--m-2-3
+.cactus__u--m-1-3
+.cactus__u--m-2-3
 
-.cactus__unit--s-1
+.cactus__u--s-1
 ```
 
-If the same innumerator and denominator are passed as a ratio it will automatically export the ratio as 1. So `1 1`, `2 2`, `3 3` etc would all convert to `.cactus__unit--1`, for this reason you should only ever declare one full width ratio or you will end up with duplicate classes.
+If the same innumerator and denominator are passed as a ratio it will automatically export the ratio as 1. So `1 1`, `2 2`, `3 3` etc would all convert to `.cactus__u--1`, for this reason you should only ever declare one full width ratio or you will end up with duplicate classes.
 
 
 The breakpoint name can be set to anything you want, I tend to stick to `m` for medium and `l` for large etc however you could pass the breakpoint name `ipad2` and get the class:
 
 ``` scss
-.cactus__unit--ipad2-1-4
+.cactus__u--ipad2-1-4
 ```
 
 With this control you can set as many breakpoints as you want while only adding minimal weight to your CSS by only outputting the classes you want.

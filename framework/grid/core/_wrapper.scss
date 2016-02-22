@@ -1,5 +1,8 @@
-.cactus__wrapper {
+[class*='cactus__w'] {
   margin: 0 auto;
+}
+
+.cactus__w {
   max-width: $cactus-wrapper-width;
 
   @if $cactus-wrapper-wide-width {
