@@ -1,0 +1,19 @@
+/*====================================================
+  Cactus WRAPPER
+====================================================*/
+
+// The wrapper sets the outer width, by default this is centered.
+
+[class*='#{$cactus-prefix}__w'] {
+  margin: 0 auto;
+}
+
+.#{$cactus-prefix}__w {
+  max-width: $cactus-wrapper-width;
+
+  @if $cactus-wrapper-wide-width {
+    &--wide {
+      max-width: $cactus-wrapper-wide-width;
+    }
+  }
+}

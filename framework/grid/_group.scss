@@ -1,4 +1,8 @@
-.cactus__g {
+/*====================================================
+  Cactus GROUP
+====================================================*/
+
+.#{$cactus-prefix}__g {
   display: -webkit-flex;
   -webkit-flex-flow: row wrap;
   display: -ms-flexbox;
@@ -6,7 +10,7 @@
   font-size: 0;
 
   @if $cactus-gutter-outer {
-    .cactus__g {
+    .#{$cactus-prefix}__g {
       margin-left: -$cactus-usable-gutter * 1px;
       margin-right: -$cactus-usable-gutter * 1px;
     }
@@ -23,18 +27,19 @@
       margin-left: -$cactus-usable-gutter-small * 1px;
       margin-right: -$cactus-usable-gutter-small * 1px;
 
-      > [class *= "cactus__u"] {
+      > [class*='#{$cactus-prefix}__u'] {
         padding-left: $cactus-usable-gutter-small * 1px;
         padding-right: $cactus-usable-gutter-small * 1px;
       }
     }
   }
 
+
   &--gutter-none {
     margin-left: 0;
     margin-right: 0;
 
-    > [class *= "cactus__u"] {
+    > [class*='#{$cactus-prefix}__u'] {
       padding-left: 0;
       padding-right: 0;
     }

@@ -1,0 +1,76 @@
+/*====================================================
+  Cactus INIT
+====================================================*/
+
+// Get usable gutter to apply on either side of the units:
+$cactus-usable-gutter: strip-unit($cactus-gutter) / 2;
+
+// Get usable small gutter to apply on either side of the units:
+$cactus-usable-gutter-small: strip-unit($cactus-gutter-small) / 2;
+
+// Transforms fractions in to percentages:
+@function calculate-unit-width($numerator, $denominator) {
+  @return (100% / $denominator) * $numerator;
+}
+
+
+// Cactus BUILD LOOP
+// ====================================================
+@each $cactus-grid-breakpoint in $cactus-grid-generator {
+
+  // Get current breakpoint name, width and array of ratios:
+  $cactus-grid-breakpoint-name: nth($cactus-grid-breakpoint, 1);
+  $cactus-grid-breakpoint-width: nth($cactus-grid-breakpoint, 2);
+  $cactus-grid-breakpoint-unit-ratios: nth($cactus-grid-breakpoint, 3);
+
+  // Checks for a breakpoint name, if it exists this is caculated as a responsive breakpoint:
+  @if $cactus-grid-breakpoint-name {
+
+    @media (max-width: $cactus-grid-breakpoint-width) {
+
+      @each $cactus-grid-unit in $cactus-grid-breakpoint-unit-ratios {
+        // Loops through each unit width fraction and extracts the numerator and denominator
+        $cactus-unit-numerator: nth($cactus-grid-unit, 1);
+        $cactus-unit-denominator: nth($cactus-grid-unit, 2);
+        $cactus-grid-unit-width: calculate-unit-width($cactus-unit-numerator, $cactus-unit-denominator);
+
+        // if numerator and denomenator are equal ie 1/1, 4/4 or 8/8 then they do not need to be exported:
+        @if $cactus-unit-denominator == $cactus-unit-numerator {
+          .#{$cactus-prefix}__u--#{$cactus-grid-breakpoint-name}-1 {
+            width: $cactus-grid-unit-width;
+          }
+        }
+
+        // All other combinations will be exported with the relevant class name
+        @else {
+          .#{$cactus-prefix}__u--#{$cactus-grid-breakpoint-name}-#{$cactus-unit-numerator}-#{$cactus-unit-denominator} {
+            width: $cactus-grid-unit-width;
+          }
+        }
+      }
+    }
+  }
+
+  // If no breakpoint name exists we dont wrap in a media query and run through the same procedure except for the breakpoint name:
+  @else {
+    @each $cactus-grid-unit in $cactus-grid-breakpoint-unit-ratios {
+      $cactus-unit-numerator: nth($cactus-grid-unit, 1);
+      $cactus-unit-denominator: nth($cactus-grid-unit, 2);
+      $cactus-grid-unit-width: calculate-unit-width($cactus-unit-numerator, $cactus-unit-denominator);
+
+      @if $cactus-unit-denominator == $cactus-unit-numerator {
+        .#{$cactus-prefix}__u--1 {
+          width: $cactus-grid-unit-width;
+        }
+      }
+
+      @else {
+        .#{$cactus-prefix}__u--#{$cactus-unit-numerator}-#{$cactus-unit-denominator} {
+          width: $cactus-grid-unit-width;
+        }
+      }
+    }
+  }
+};
+
+// TODO: Find a way to DRY up this process.

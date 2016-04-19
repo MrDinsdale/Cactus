@@ -1,23 +1,51 @@
-/*==========================
-  Cactus Grid Settings
-==========================*/
+/*====================================================
+  Cactus Settings
+====================================================*/
 
 $cactus-base-font-size: 16px !default;
 
+// Customise prefix for cactus classes. For example using '@' would result in:
+/*
+ *    .@__w
+ *    .@__g
+ *    .@__u--m-1-5
+ */
+$cactus-prefix: 'cactus' !default;
+
+// WRAPPER
+// Sets the max widths of the wrapper object.
+$cactus-wrapper-width: 75em !default;
+$cactus-wrapper-wide-width: 90em !default;
+
+// GROUP
+// Config for the group object including gutter setup.
 $cactus-gutter-outer: true !default;
 $cactus-gutter: 32px !default;
 $cactus-gutter-small: 16px !default;
 
-// Wrapper
-$cactus-wrapper-width: 75em !default;
-$cactus-wrapper-wide-width: 90em !default;
-
-// Base grid generator
+// BASE GRID DEFINITIONS
+// Array of fractions used to build the unit widths.
 $cactus-unit-ratios-base: 1 1, 1 2, 1 4, 3 4 !default;
 
-// Grid Unit Config
+// RESPONSIVE GRID DEFINITIONSS
+// Here we define some breakpoints and arrays of fractions to generate responsive unit widths.
 $break-m: 767px !default;
 $cactus-unit-ratios-m: 1 1, 1 2 !default;
 
-// Build loop for Grid Generator
+// BUILD LOOP
+// Pass in your grid generators in to an array to build as many units as we want!
+// Structure is (breakpoint name, breakpoint width, array of unit width fractions)
 $cactus-grid-generator: false false $cactus-unit-ratios-base, m $break-m $cactus-unit-ratios-m !default;
+
+
+// DEBUG
+// ====================================================
+
+// Enable debug mode to highlight elements
+$cactus-debug-enabled: false !default;
+
+// DEBUG COLORS
+// Selection of colors for debuging elements
+$debug-w: #363E53;
+$debug-g: #308EA7;
+$debug-u: #77C6C0;
