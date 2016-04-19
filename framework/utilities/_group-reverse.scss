@@ -1,15 +1,15 @@
 /* ========================================
-Allows revesed order on a row of units
+Allows revesed order on a group of units
 
 Usage:
-  .cactus__g.cactus__row-reverse
+  .cactus__g.u-group-reverse
     .cactus__u--1-3...
  ======================================== */
 
-.cactus__row-reverse {
+.u-group-reverse {
   direction: rtl;
 
-  & > [class*='cactus__unit'] {
+  > [class*='#{$cactus-prefix}__unit'] {
     direction: ltr;
   }
 }

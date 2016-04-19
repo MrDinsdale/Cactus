@@ -1,0 +1,22 @@
+{
+  "name": "Cactus",
+  "homepage": "https://github.com/MrDinsdale/Cactus",
+  "authors": [
+    "Joe Dinsdale <mrjdinsdale@gmail.com>"
+  ],
+  "description": "Cactus is a very minimal but flexible CSS grid framework powered by Scss. Rather than defining a list of potential column widths, Cactus lets you define your own and automatically generates the classes for you.",
+  "main": "application.scss",
+  "moduleType": [],
+  "keywords": [
+    "SCSS"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
