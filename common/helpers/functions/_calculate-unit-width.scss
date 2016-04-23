@@ -1,0 +1,10 @@
+// Transforms fractions in to percentages:
+@function calculate-unit-width($numerator, $denominator) {
+  @if $numerator and $denominator {
+    @return (100% / $denominator) * $numerator;
+  }
+
+  @else {
+    @warn "Both $numerator and $denomenator MUST be set.";
+  }
+}
