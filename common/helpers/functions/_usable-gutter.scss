@@ -1,0 +1,4 @@
+// Calculates a usable gutter width
+@function usable-gutter($gutter-width) {
+  @return strip-unit($gutter-width) / 2 * $cactus-base-font-size;
+}

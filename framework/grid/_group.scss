@@ -2,34 +2,55 @@
   Cactus GROUP
 ====================================================*/
 
-.#{$cactus-prefix}__g {
+[class*="#{$cactus-prefix}__g"] {
   display: -webkit-flex;
   -webkit-flex-flow: row wrap;
   display: -ms-flexbox;
   -ms-flex-flow: row wrap;
   font-size: 0;
+}
 
-  @if $cactus-gutter-outer {
+.#{$cactus-prefix}__g {
+
+  // Store the gutter sizes for easier access
+  $usable-gutter--default: usable-gutter(map-get($cactus-gutter-config, default));
+  $usable-gutter--large: usable-gutter(map-get($cactus-gutter-config, large));
+  $usable-gutter--small: usable-gutter(map-get($cactus-gutter-config, small));
+
+  @if map-get($cactus-gutter-config, outer-enabled) {
     .#{$cactus-prefix}__g {
-      margin-left: -$cactus-usable-gutter * 1px;
-      margin-right: -$cactus-usable-gutter * 1px;
+      margin-left: -$usable-gutter--default;
+      margin-right: -$usable-gutter--default;
     }
   }
 
   @else {
-    margin-left: -$cactus-usable-gutter * 1px;
-    margin-right: -$cactus-usable-gutter * 1px;
+    margin-left: -$usable-gutter--default;
+    margin-right: -$usable-gutter--default;
   }
 
 
-  @if $cactus-gutter-small {
-    &--gutter-small {
-      margin-left: -$cactus-usable-gutter-small * 1px;
-      margin-right: -$cactus-usable-gutter-small * 1px;
+  @if $usable-gutter--large {
+    &--gutter-large {
+      margin-left: -$usable-gutter--large;
+      margin-right: -$usable-gutter--large;
 
-      > [class*='#{$cactus-prefix}__u'] {
-        padding-left: $cactus-usable-gutter-small * 1px;
-        padding-right: $cactus-usable-gutter-small * 1px;
+      > [class *= "#{$cactus-prefix}__u"] {
+        padding-left: $usable-gutter--large;
+        padding-right: $usable-gutter--large;
+      }
+    }
+  }
+
+
+  @if $usable-gutter--small {
+    &--gutter-small {
+      margin-left: -$usable-gutter--small;
+      margin-right: -$usable-gutter--small;
+
+      > [class *= "#{$cactus-prefix}__u"] {
+        padding-left: $usable-gutter--small;
+        padding-right: $usable-gutter--small;
       }
     }
   }
@@ -39,7 +60,7 @@
     margin-left: 0;
     margin-right: 0;
 
-    > [class*='#{$cactus-prefix}__u'] {
+    > [class *= "#{$cactus-prefix}__u"] {
       padding-left: 0;
       padding-right: 0;
     }
