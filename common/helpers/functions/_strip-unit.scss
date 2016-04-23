@@ -1,3 +1,9 @@
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+  @if type_of($num) == number {
+    @return $num / ($num * 0 + 1);
+  }
+
+  @else {
+    @warn "Value must be a number i.e. 12, 24px etc.";
+  }
 }
