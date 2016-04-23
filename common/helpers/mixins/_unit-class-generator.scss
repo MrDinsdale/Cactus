@@ -1,6 +1,6 @@
 // Creates a Cactus unit class.
 @mixin unit-class-generator($name, $unit-ratio) {
-  @if $name and $unit-ratio {
+  @if $unit-ratio {
     $numerator: nth($unit-ratio, 1);
     $denominator: nth($unit-ratio, 2);
 
@@ -10,6 +10,6 @@
   }
 
   @else {
-    @warn "You must pass a $name and $unit-ratio, even if name is false."
+    @warn "You must pass a $unit-ratio."
   }
 }
