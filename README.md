@@ -64,7 +64,69 @@ The Unit defines the ratios of your columns as well as breakpoints where it will
 ```
 
 ## Cactus Grid Generator
-The Cactus Grid is defined by `$cactus-grid-generator`. It consists of an array of data for each breakpoint:
+There have been some major changes to how the settings for Cactus work. It will take me a while to re-write the documentation to account for this and add better tools for extending however for now heres a quick summary
+
+
+### Cactus Unit Config
+Here we can define each of the breakpoints we want to generate unit classes for and specify what those units should be:
+
+``` scss
+$cactus-unit-config: (
+  default: (
+    name: false,
+    breakpoint: false,
+    units: $cactus-unit-ratio-default
+  ),
+  medium: (
+    name: m,
+    breakpoint: 75em,
+    units: $cactus-unit-ratio-default
+  )
+);
+```
+
+Here we have two breakpoints, `default` and `medium`. Each comprises of:
+
+- **`name`** - The name which will be used for the class, for example giving a name of 'm' will result in a generated class of `.cactus__u--m-X`. Setting to `false` means this is the global breakpoint with no media query attached.
+- **`breakpoint`** - This is the width at which the breakpoint should apply and should be set in em's. A breakpoint of `50em` would mean these classes only effect when the screen width is below `800px` etc.
+- **`units`** - This should be set to a variable containing an array of fractions, for the correct format of these see below.
+
+### Cactus Unit Ratios
+These are the unit ratios we set for the various breakpoints. They currently need to be contained with in separate variables as sass maps don't support nested arrays. The benefit of this is that it potentially DRYs up our code:
+
+``` scss
+$cactus-unit-ratio-default: 1 1, 1 2, 1 3, 2 3, 1 4, 3 4;
+```
+
+The unit ratios are essentially fractions so `1 2` is the same as `1/2` or `50%`. There is no limit to how many you can have although it is recommended that you only include the ones you need.
+
+### Cactus Breakpoint Config
+
+Here we set which of the breakpoints we want to include in our project. The values in here must be the same as the maps nested within `$cactus-unit-config`.
+
+``` scss
+$cactus-breakpoint-config: (
+  default,
+  medium,
+  small
+);
+```
+
+### Using the generated class names
+The classes and breakpoints we have defined will be exported in the following format:
+
+``` scss
+.cactus__u--1-4     // Quarter width
+.cactus__u--3-4     // Three quarter width
+
+.cactus__u--m-1-3   // Quarter width at medium breakpoint
+.cactus__u--m-2-3   // Three quarter width at medium breakpoint
+
+.cactus__u--s-1     // Full width at small breakpoint
+```
+
+
+<!-- The Cactus Grid is defined by `$cactus-grid-generator`. It consists of an array of data for each breakpoint:
 
 '$breakpoint-name $breakpoint-width $array-of-unit-ratios'
 
@@ -107,7 +169,7 @@ The breakpoint name can be set to anything you want, I tend to stick to `m` for 
 .cactus__u--ipad2-1-4
 ```
 
-With this control you can set as many breakpoints as you want while only adding minimal weight to your CSS by only outputting the classes you want.
+With this control you can set as many breakpoints as you want while only adding minimal weight to your CSS by only outputting the classes you want. -->
 
 
 This is very much a work in progress and highly likely to change drastically over the next few months. I also have a lot of refactoring for naming conventions of variables etc. If you have any suggestions or improvements feel free to let me know :D
