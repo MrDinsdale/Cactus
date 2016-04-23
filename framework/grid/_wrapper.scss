@@ -9,11 +9,17 @@
 }
 
 .#{$cactus-prefix}__w {
-  max-width: $cactus-wrapper-width;
+  max-width: map-get($cactus-wrapper-config, default);
 
-  @if $cactus-wrapper-wide-width {
+  @if map-get($cactus-wrapper-config, wide) {
     &--wide {
-      max-width: $cactus-wrapper-wide-width;
+      max-width: map-get($cactus-wrapper-config, wide);
+    }
+  }
+
+  @if map-get($cactus-wrapper-config, small) {
+    &--small {
+      max-width: map-get($cactus-wrapper-config, small);
     }
   }
 }
