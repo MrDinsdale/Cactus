@@ -9,7 +9,7 @@ Usage:
 .u-group-reverse {
   direction: rtl;
 
-  > [class*='#{$cactus-prefix}__unit'] {
+  > [class*='#{$cactus-prefix}__u'] {
     direction: ltr;
   }
 }
