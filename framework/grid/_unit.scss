@@ -12,7 +12,7 @@
 [class *= "#{$cactus-prefix}__u"] {
   display: inline-block;
   font-size: $cactus-base-font-size;
-  padding-left: usable-gutter(map-get($cactus-gutter-config, default));
-  padding-right: usable-gutter(map-get($cactus-gutter-config, default));
+  padding-left: usable-gutter(map-get(map-get($cactus-gutter-config, sizes), default));
+  padding-right: usable-gutter(map-get(map-get($cactus-gutter-config, sizes), default));
   vertical-align: top;
 }
