@@ -25,9 +25,10 @@ $cactus-prefix: 'cactus' !default;
 
 // Sets the max widths of default and modifiers for the wrapper object (EM).
 $cactus-wrapper-config: (
-  wide: 75em,
-  default: 48em,
-  small: 36em
+  sizes: (
+    default: 48em,
+    small: 75em
+  )
 );
 
 
@@ -37,9 +38,10 @@ $cactus-wrapper-config: (
 // Config for the group object including gutter setup (EM).
 $cactus-gutter-config: (
   outer-enabled: true,
-  large: 2em,
-  default: 1em,
-  small: .5em
+  sizes: (
+    default: 2em,
+    small: 1em
+  )
 );
 
 // Warning Outer Gutter is always default size.

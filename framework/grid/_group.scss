@@ -12,49 +12,36 @@
 
 .#{$cactus-prefix}__g {
 
-  // Store the gutter sizes for easier access
-  $usable-gutter--default: usable-gutter(map-get($cactus-gutter-config, default));
-  $usable-gutter--large: usable-gutter(map-get($cactus-gutter-config, large));
-  $usable-gutter--small: usable-gutter(map-get($cactus-gutter-config, small));
+  // Loop through gutter sizes
+  @each $size in map-get($cactus-gutter-config, sizes) {
+    // Store name and width of each variant
+    $name: nth($size, 1);
+    $width: usable-gutter(nth($size, 2));
 
-  @if map-get($cactus-gutter-config, outer-enabled) {
-    .#{$cactus-prefix}__g {
-      margin-left: -$usable-gutter--default;
-      margin-right: -$usable-gutter--default;
+    // If gutter is default set this to the unmodified `.cactus__g`
+    @if $name == 'default' {
+
+      @if map-get($cactus-gutter-config, outer-enabled) {
+        .#{$cactus-prefix}__g {
+          margin-left: -$width;
+          margin-right: -$width;
+        }
+      }
+
+      @else {
+        margin-left: -$width;
+        margin-right: -$width;
+      }
     }
-  }
 
-  @else {
-    margin-left: -$usable-gutter--default;
-    margin-right: -$usable-gutter--default;
-  }
-
-
-  @if $usable-gutter--large {
-    &--gutter-large {
-      margin-left: -$usable-gutter--large;
-      margin-right: -$usable-gutter--large;
-
-      > [class *= "#{$cactus-prefix}__u"] {
-        padding-left: $usable-gutter--large;
-        padding-right: $usable-gutter--large;
+    // Treat all other gutter widths as modifiers
+    @else {
+      &--#{$name} {
+        margin-left: -$width;
+        margin-right: -$width;
       }
     }
   }
-
-
-  @if $usable-gutter--small {
-    &--gutter-small {
-      margin-left: -$usable-gutter--small;
-      margin-right: -$usable-gutter--small;
-
-      > [class *= "#{$cactus-prefix}__u"] {
-        padding-left: $usable-gutter--small;
-        padding-right: $usable-gutter--small;
-      }
-    }
-  }
-
 
   &--gutter-none {
     margin-left: 0;
