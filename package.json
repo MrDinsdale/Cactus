@@ -1,0 +1,26 @@
+{
+  "name": "cactus",
+  "version": "0.3.3",
+  "description": "Light weight CSS framework.",
+  "main": "application.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrDinsdale/Cactus.git"
+  },
+  "keywords": [
+    "Scss",
+    "CSS",
+    "grid",
+    "framework",
+    "responsive"
+  ],
+  "author": "Joe Dinsdale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MrDinsdale/Cactus/issues"
+  },
+  "homepage": "https://github.com/MrDinsdale/Cactus#readme"
+}
