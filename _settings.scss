@@ -29,7 +29,7 @@ $cactus-wrapper-config: (
     default: 48em,
     small: 75em
   )
-);
+) !default;
 
 
 // Group
@@ -42,7 +42,7 @@ $cactus-gutter-config: (
     default: 2em,
     small: 1em
   )
-);
+) !default;
 
 // Warning Outer Gutter is always default size.
 
@@ -51,14 +51,14 @@ $cactus-gutter-config: (
 //====================================================
 
 // Map of each breakpoint, with name, width (EM) and array of unit size ratios.
-$cactus-unit-ratio-default: 1 1, 1 2, 1 3, 2 3, 1 4, 3 4;
-$cactus-unit-ratio-medium: 1 1, 1 2, 1 3, 2 3;
+$cactus-unit-ratio-default: 1 1, 1 2, 1 3, 2 3, 1 4, 3 4 !default;
+$cactus-unit-ratio-medium: 1 1, 1 2, 1 3, 2 3 !default;
 
 $cactus-breakpoint-config: (
   default,
   medium,
   small
-);
+) !default;
 
 $cactus-unit-config: (
   default: (
@@ -81,7 +81,7 @@ $cactus-unit-config: (
     breakpoint: 32em,
     units: $cactus-unit-ratio-medium
   )
-);
+) !default;
 
 
 /*====================================================
