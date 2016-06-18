@@ -3,12 +3,12 @@
 ====================================================*/
 
 // CACTUS DEFAULT SETTINGS
-// ** NO LONGER INCLUDED, CONTENTS SHOULD BE ADDED TO YOUR OWN PROJECT BEFORE INCLUDING CACTUS **
-// @import 'defaults';
+// Settings for Cactus breakpoints and included classes
+@import 'settings';
 
 // CACTUS COMMON STYLES
 // Common styling for elements and useful helpers.
-@import 'common/all'; /* REQUIRED */
+@import 'common/all';
 
 // CACTUS FRAMEWORK
 // This is the core layout engine, any changes are likely to have unwanted effects!
