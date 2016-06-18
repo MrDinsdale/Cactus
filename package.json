@@ -1,6 +1,6 @@
 {
   "name": "cactus-framework",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Light weight CSS framework.",
   "main": "application.scss",
   "scripts": {
