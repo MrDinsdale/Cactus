@@ -10,7 +10,7 @@
 // Global
 //====================================================
 
-$cactus-base-font-size: 16px;
+$cactus-base-font-size: 16px !default;
 
 /* Customise prefix for cactus classes. For example using '@' would result in:
  *    .@__w
@@ -95,6 +95,6 @@ $cactus-debug-enabled: false !default;
 //====================================================
 
 // Selection of colors for debuging elements.
-$debug-w: #363E53;
-$debug-g: #308EA7;
-$debug-u: #77C6C0;
+$debug-w: #363E53 !default;
+$debug-g: #308EA7 !default;
+$debug-u: #77C6C0 !default;
