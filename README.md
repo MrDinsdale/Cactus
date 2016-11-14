@@ -15,7 +15,7 @@ Cactus makes use of BEM like naming convention for classes making for far more r
 .block__element--modifier {}
 ```
 
-For more information have a look at [MindBEMding - Getting your head round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) by Harry Roberts, its a great read!
+For more information have a look at [MindBEMding - Getting your head round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) by Harry Roberts, it's a great read!
 
 ### Cactus wrapper
 The Wrapper element sets the max width `$cactus-wrapper-width` of the content and centers it on the page, by default this is 60em (960px).
@@ -65,7 +65,7 @@ The Unit defines the ratios of your columns as well as breakpoints where it will
 ```
 
 ## Cactus Grid Generator
-There have been some major changes to how the settings for Cactus work. It will take me a while to re-write the documentation to account for this and add better tools for extending however for now heres a quick summary
+There have been some major changes to how the settings for Cactus work. It will take me a while to re-write the documentation to account for this and add better tools for extending however for now here's a quick summary
 
 
 ### Cactus Unit Config
