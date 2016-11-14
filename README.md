@@ -34,18 +34,19 @@ An optional wide modifier can be set `$cactus-wrapper-width-wide`, by default th
 The Group element wraps Units, it also allows us to adjust the gutter on direct descendant `cactus__u` elements.
 
 ``` scss
-.o-cactus__g // Default gutter width set by $cactus-gutter, 32px default.
-.o-cactus__g--gutter-small // Sets gutter to value of $cactus-gutter-small, 8px default.
-.o-cactus__g--gutter-none // Removes gutter.
+.o-cactus__g                // Default gutter width set by $cactus-gutter, 32px default.
+.o-cactus__g--gutter-small  // Sets gutter to value of $cactus-gutter-small, 8px default.
+.o-cactus__g--gutter-none   // Removes gutter.
+.o-cactus__g--reverse       // Reverse child unit elements.
 ```
 
 ### Cactus Unit
 The Unit defines the ratios of your columns as well as breakpoints where it will become effective.
 
 ``` scss
-.o-cactus__u--1-2 // 1/2 width unit with no specified breakpoint
-.o-cactus__u--l-13-19 // 13/19 width unit at the large breakpoint (for some insane layouts)
-.o-cactus__u--m-1-8 // 1/8 width at the medium breakpoint
+.o-cactus__u--1-2       // 1/2 width unit with no specified breakpoint
+.o-cactus__u--l-13-19   // 13/19 width unit at the large breakpoint (for some insane layouts)
+.o-cactus__u--m-1-8     // 1/8 width at the medium breakpoint
 ```
 
 ### Markup example

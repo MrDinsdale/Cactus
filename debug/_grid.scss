@@ -1,0 +1,9 @@
+// ====================================================
+// Cactus - Debug - Grid
+// ====================================================
+
+@if ($cactus-debug-enabled) {
+  .o-#{$cactus-prefix}__g > *:not([class*='o-#{$cactus-prefix}__u']) {
+    background-color: map-get($cactus-debug-colours, red);
+  }
+}
