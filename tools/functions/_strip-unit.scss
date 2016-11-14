@@ -1,0 +1,15 @@
+//====================================================
+// Tools - Functions - Strip Unit
+//====================================================
+
+// Used to generate class names for cactus grid unit elements
+
+@function strip-unit($num) {
+  @if type_of($num) == number {
+    @return $num / ($num * 0 + 1);
+  }
+
+  @else {
+    @warn "Value must be a number i.e. 12, 24px etc.";
+  }
+}

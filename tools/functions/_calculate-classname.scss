@@ -1,0 +1,26 @@
+//====================================================
+// Tools - Functions - Calculate Classnames
+//====================================================
+
+// Used to generate class names for cactus grid unit elements
+
+@function calculate-classname($name, $numerator, $denominator) {
+  @if $numerator and $denominator {
+    @if $denominator == $numerator and $name == false {
+      @return "o-#{$cactus-prefix}__u--1";
+    }
+    @if $name == false {
+      @return "o-#{$cactus-prefix}__u--#{$numerator}-#{$denominator}";
+    }
+    @if $denominator == $numerator and $name {
+      @return "o-#{$cactus-prefix}__u--#{$name}-1";
+    }
+    @else {
+      @return "o-#{$cactus-prefix}__u--#{$name}-#{$numerator}-#{$denominator}";
+    }
+  }
+
+  @else {
+    @warn "Both $numerator and $denomenator MUST be set.";
+  }
+}

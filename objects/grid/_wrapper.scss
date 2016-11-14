@@ -1,0 +1,31 @@
+//====================================================
+// Cactus - Objects - Grid - Wrapper
+//====================================================
+
+// The wrapper sets the outer width, by default this is centered.
+
+[class*='o-#{$cactus-prefix}__w'] {
+  margin: 0 auto;
+}
+
+.o-#{$cactus-prefix}__w {
+
+  // Loop through wrapper sizes
+  @each $size in map-get($cactus-wrapper-config, sizes) {
+    // Store name and width of each variant
+    $name: nth($size, 1);
+    $width: nth($size, 2);
+
+    // If wrapper is default set this to the unmodified `.o-cactus__w`
+    @if $name == 'default' {
+      max-width: $width;
+    }
+
+    // Treat all other wrapper widths as modifiers
+    @else {
+      &--#{$name} {
+        max-width: $width;
+      }
+    }
+  }
+}
