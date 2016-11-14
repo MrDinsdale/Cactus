@@ -1,0 +1,35 @@
+// =============================================================================
+// Test - Tools - Mixins - Unit Class Generator
+// =============================================================================
+
+@import "../../../tools/functions/calculate-classname";
+@import "../../../tools/mixins/unit-class-generator";
+@import "../../../settings/grid";
+
+@include test-module("@mixin unit-class-generator") {
+  @include test('Outputs correct class') {
+    @include assert('when no name is set') {
+      @include output {
+        @include unit-class-generator(false, 1 2);
+      }
+
+      @include expect {
+        .o-cactus__u--1-2 {
+          width: 50%;
+        }
+      }
+    }
+
+    @include assert('when name is set') {
+      @include output {
+        @include unit-class-generator(medium, 1 2);
+      }
+
+      @include expect {
+        .o-cactus__u--medium-1-2 {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

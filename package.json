@@ -1,11 +1,16 @@
 {
   "name": "cactus-framework",
-  "version": "0.5.1",
-  "description": "Light weight CSS framework.",
+  "version": "1.0.0-rc1",
+  "description": "Light weight CSS framework based on ITCSS, BEM and Scss.",
   "main": "application.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha ./test/sass.js",
+    "lint": "stylelint ./**/*.scss --syntax scss"
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MrDinsdale/Cactus.git"
@@ -22,5 +27,12 @@
   "bugs": {
     "url": "https://github.com/MrDinsdale/Cactus/issues"
   },
-  "homepage": "https://github.com/MrDinsdale/Cactus#readme"
+  "homepage": "https://github.com/MrDinsdale/Cactus#readme",
+  "dependencies": {
+    "mocha": "^3.1.2",
+    "pre-commit": "^1.1.3",
+    "sass-true": "^2.1.3",
+    "stylelint": "^7.5.0",
+    "stylelint-selector-bem-pattern": "^1.0.0"
+  }
 }

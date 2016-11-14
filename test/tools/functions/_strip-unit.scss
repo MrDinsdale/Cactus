@@ -1,0 +1,29 @@
+// =============================================================================
+// Test - Tools - Functions - Strip Unit
+// =============================================================================
+
+@import "../../../tools/functions/strip-unit";
+@import "../../../settings/grid";
+
+@include test-module("@function strip-unit") {
+  @include test("returns correct unit when px value set") {
+    $actual: strip-unit(20px);
+    $expected: 20;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("returns correct unit when em decimal value set") {
+    $actual: strip-unit(.5em);
+    $expected: .5;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("returns correct unit when value is an operation") {
+    $actual: strip-unit(20px * 5);
+    $expected: 100;
+
+    @include assert-equal($actual, $expected);
+  }
+}

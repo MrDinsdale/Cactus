@@ -1,0 +1,15 @@
+// =============================================================================
+// Test - Tools - Functions - Usable Gutter
+// =============================================================================
+
+@import "../../../tools/functions/usable-gutter";
+@import "../../../settings/grid";
+
+@include test-module("@function usable-gutter") {
+  @include test("returns correct unit when em value set") {
+    $actual: usable-gutter(2em);
+    $expected: 16px;
+
+    @include assert-equal($actual, $expected);
+  }
+}

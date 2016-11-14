@@ -1,0 +1,15 @@
+//====================================================
+// Tools - Functions - Calculate Class Names
+//====================================================
+
+// Calculates a usable gutter width
+
+@function usable-gutter($gutter-width) {
+  @if type_of($gutter-width) == number {
+    @return strip-unit($gutter-width) / 2 * $cactus-base-font-size;
+  }
+
+  @else {
+    @warn "Value must be a number in em's i.e. 1em, .5em etc.";
+  }
+}

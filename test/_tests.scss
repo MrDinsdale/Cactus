@@ -1,0 +1,12 @@
+@import 'true';
+
+// Import Test files
+@import 'tools/functions/calculate-classname';
+@import 'tools/functions/calculate-unit-width';
+@import 'tools/functions/strip-unit';
+@import 'tools/functions/usable-gutter';
+
+@import 'tools/mixins/unit-class-generator';
+
+// Run the tests
+@include report();

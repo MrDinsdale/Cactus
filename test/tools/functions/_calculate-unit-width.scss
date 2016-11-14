@@ -1,0 +1,15 @@
+// =============================================================================
+// Test - Tools - Functions - Calculate Unit Width
+// =============================================================================
+
+@import "../../../tools/functions/calculate-unit-width";
+@import "../../../settings/grid";
+
+@include test-module("@function calculate-unit-width") {
+  @include test("returns correct width") {
+    $actual: calculate-unit-width(1, 2);
+    $expected: 50%;
+
+    @include assert-equal($actual, $expected);
+  }
+}
