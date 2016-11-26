@@ -1,0 +1,76 @@
+// ====================================================
+// Cactus - Settings - Grid
+// ====================================================
+
+// Global
+//====================================================
+
+$cactus-base-font-size: 16px !default;
+
+// Customise prefix for cactus classes. For example using '@' would result in:
+//    .o-@__w
+//    .o-@__g
+//    .o-@__u--m-1-5
+
+$cactus-prefix: 'cactus' !default;
+
+// Wrapper
+//====================================================
+
+// Sets the max widths of default and modifiers for the wrapper object (em).
+$cactus-wrapper-config: (
+  sizes: (
+    default: 48em,
+    small: 40em
+  )
+) !default;
+
+// Group
+//====================================================
+
+// Config for the group object including gutter setup (em).
+$cactus-gutter-config: (
+  outer-enabled: true,
+  sizes: (
+    default: 2em,
+    small: 1em
+  )
+) !default;
+
+// Warning Outer Gutter is always default size.
+
+// Cactus Unit Config
+//====================================================
+
+// Map of each breakpoint, with name, width (em) and array of unit size ratios.
+$cactus-unit-ratio-default: 1 1, 1 2, 1 3, 2 3, 1 4, 3 4 !default;
+$cactus-unit-ratio-medium: 1 1, 1 2, 1 3, 2 3 !default;
+
+$cactus-breakpoint-config: (
+  default,
+  medium,
+  small
+) !default;
+
+$cactus-unit-config: (
+  default: (
+    name: false,
+    breakpoint: false,
+    units: $cactus-unit-ratio-default
+  ),
+  large: (
+    name: m,
+    breakpoint: 75em,
+    units: $cactus-unit-ratio-default
+  ),
+  medium: (
+    name: m,
+    breakpoint: 56em,
+    units: $cactus-unit-ratio-medium
+  ),
+  small: (
+    name: s,
+    breakpoint: 32em,
+    units: $cactus-unit-ratio-medium
+  )
+) !default;

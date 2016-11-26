@@ -4,48 +4,70 @@
 
 Cactus is a very minimal but flexible CSS grid framework powered by Scss. Rather than defining a list of potential column widths, Cactus lets you define your own and automatically generates the classes for you.
 
+## Installation
+To include in your project run the following:
+`npm install cactus-framework --save`
+
+Then integrate in to your build pipeline.
+
+## Testing
+Cactus has a suite of automated tests, to run:
+`npm run test`
+
+For linting run:
+`npm run lint`
+
+## Build
+To build a static CSS version of Cactus run:
+`npm run build`
+
+
+## Cactus Structure
+Cactus is structured acording to ITCSS, this allows separation of concerns and gives greater context for what each class is used for. For more information checkout this [blog post on ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture).
+
 
 ## Cactus Classes
 Cactus makes use of BEM like naming convention for classes making for far more readable markup, if you're not familiar it stands for Block Element Modifier. It follows this basic structure:
 
 ``` scss
-.block {}
-.block__element {}
-.block--modifier {}
-.block__element--modifier {}
+.prefix-block {}
+.prefix-block__element {}
+.prefix-block--modifier {}
+.prefix-block__element--modifier {}
 ```
 
-For more information have a look at [MindBEMding - Getting your head round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) by Harry Roberts, its a great read!
+For more information have a look at [MindBEMding - Getting your head round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) by Harry Roberts, it's a great read!
 
 ### Cactus wrapper
 The Wrapper element sets the max width `$cactus-wrapper-width` of the content and centers it on the page, by default this is 60em (960px).
 
 ``` scss
-.cactus__w
+.o-cactus__w
 ```
 
 An optional wide modifier can be set `$cactus-wrapper-width-wide`, by default this is set to false.
 
 ``` scss
-.cactus__w--wide
+.o-cactus__w--wide
 ```
 
 ### Cactus Group
 The Group element wraps Units, it also allows us to adjust the gutter on direct descendant `cactus__u` elements.
 
 ``` scss
-.cactus__g // Default gutter width set by $cactus-gutter, 32px default.
-.cactus__g--gutter-small // Sets gutter to value of $cactus-gutter-small, 8px default.
-.cactus__g--gutter-none // Removes gutter.
+.o-cactus__g                // Default gutter width set by $cactus-gutter, 32px default.
+.o-cactus__g--gutter-small  // Sets gutter to value of $cactus-gutter-small, 8px default.
+.o-cactus__g--gutter-none   // Removes gutter.
+.o-cactus__g--reverse       // Reverse child unit elements.
 ```
 
 ### Cactus Unit
 The Unit defines the ratios of your columns as well as breakpoints where it will become effective.
 
 ``` scss
-.cactus__u--1-2 // 1/2 width unit with no specified breakpoint
-.cactus__u--l-13-19 // 13/19 width unit at the large breakpoint (for some insane layouts)
-.cactus__u--m-1-8 // 1/8 width at the medium breakpoint
+.o-cactus__u--1-2       // 1/2 width unit with no specified breakpoint
+.o-cactus__u--l-13-19   // 13/19 width unit at the large breakpoint (for some insane layouts)
+.o-cactus__u--m-1-8     // 1/8 width at the medium breakpoint
 ```
 
 ### Markup example
@@ -64,7 +86,7 @@ The Unit defines the ratios of your columns as well as breakpoints where it will
 ```
 
 ## Cactus Grid Generator
-There have been some major changes to how the settings for Cactus work. It will take me a while to re-write the documentation to account for this and add better tools for extending however for now heres a quick summary
+There have been some major changes to how the settings for Cactus work. It will take me a while to re-write the documentation to account for this and add better tools for extending however for now here's a quick summary
 
 
 ### Cactus Unit Config
@@ -87,7 +109,7 @@ $cactus-unit-config: (
 
 Here we have two breakpoints, `default` and `medium`. Each comprises of:
 
-- **`name`** - The name which will be used for the class, for example giving a name of 'm' will result in a generated class of `.cactus__u--m-X`. Setting to `false` means this is the global breakpoint with no media query attached.
+- **`name`** - The name which will be used for the class, for example giving a name of 'm' will result in a generated class of `.o-cactus__u--m-X`. Setting to `false` means this is the global breakpoint with no media query attached.
 - **`breakpoint`** - This is the width at which the breakpoint should apply and should be set in em's. A breakpoint of `50em` would mean these classes only effect when the screen width is below `800px` etc.
 - **`units`** - This should be set to a variable containing an array of fractions, for the correct format of these see below.
 
@@ -116,60 +138,11 @@ $cactus-breakpoint-config: (
 The classes and breakpoints we have defined will be exported in the following format:
 
 ``` scss
-.cactus__u--1-4     // Quarter width
-.cactus__u--3-4     // Three quarter width
+.o-cactus__u--1-4     // Quarter width
+.o-cactus__u--3-4     // Three quarter width
 
-.cactus__u--m-1-3   // Quarter width at medium breakpoint
-.cactus__u--m-2-3   // Three quarter width at medium breakpoint
+.o-cactus__u--m-1-3   // Quarter width at medium breakpoint
+.o-cactus__u--m-2-3   // Three quarter width at medium breakpoint
 
-.cactus__u--s-1     // Full width at small breakpoint
+.o-cactus__u--s-1     // Full width at small breakpoint
 ```
-
-
-<!-- The Cactus Grid is defined by `$cactus-grid-generator`. It consists of an array of data for each breakpoint:
-
-'$breakpoint-name $breakpoint-width $array-of-unit-ratios'
-
-The array of ratios for each breakpoint width is defined with comma separated numerator and denominator pairs such as `1 2, 1 3, 2 3, 1 4...`. Heres an example of all this working together:
-
-``` scss
-// Base grid generator
-$cactus-unit-ratios-base: 1 4, 3 4;
-
-$break-m: 767px;
-$cactus-unit-ratios-m: 1 3, 2 3;
-
-$break-s: 420px;
-$cactus-unit-ratios-s: 1 1;
-
-// Build loop for Grid Generator
-$cactus-grid-generator: false false $cactus-unit-ratios-base, m $break-m $cactus-unit-ratios-m, s $break-s $cactus-unit-ratios-s;
-```
-
-Passing `false` to the name and width properties will remove any breakpoint so any relevant Unit classes will not be wrapped in media queries.
-
-The resulting Unit class will be named `cactus__u--` followed by the breakpoint name (if set) and the ratios supplied. The example above would provide the following:
-
-``` scss
-.cactus__u--1-4
-.cactus__u--3-4
-
-.cactus__u--m-1-3
-.cactus__u--m-2-3
-
-.cactus__u--s-1
-```
-
-If the same innumerator and denominator are passed as a ratio it will automatically export the ratio as 1. So `1 1`, `2 2`, `3 3` etc would all convert to `.cactus__u--1`, for this reason you should only ever declare one full width ratio or you will end up with duplicate classes.
-
-
-The breakpoint name can be set to anything you want, I tend to stick to `m` for medium and `l` for large etc however you could pass the breakpoint name `ipad2` and get the class:
-
-``` scss
-.cactus__u--ipad2-1-4
-```
-
-With this control you can set as many breakpoints as you want while only adding minimal weight to your CSS by only outputting the classes you want. -->
-
-
-This is very much a work in progress and highly likely to change drastically over the next few months. I also have a lot of refactoring for naming conventions of variables etc. If you have any suggestions or improvements feel free to let me know :D

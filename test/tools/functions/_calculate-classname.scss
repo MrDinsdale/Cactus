@@ -1,0 +1,29 @@
+// =============================================================================
+// Test - Tools - Functions - Calculate Class Name
+// =============================================================================
+
+@import "../../../tools/functions/calculate-classname";
+@import "../../../settings/grid";
+
+@include test-module("@function calculate-class-name") {
+  @include test("returns correct class when no bp name is set") {
+    $actual: calculate-classname(false, 1, 2);
+    $expected: o-cactus__u--1-2;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("returns full width if numerator and denominator are equal") {
+    $actual: calculate-classname(false, 3, 3);
+    $expected: o-cactus__u--1;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("returns correct bp name when set") {
+    $actual: calculate-classname(medium, 1, 3);
+    $expected: o-cactus__u--medium-1-3;
+
+    @include assert-equal($actual, $expected);
+  }
+}

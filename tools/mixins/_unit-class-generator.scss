@@ -1,0 +1,20 @@
+//====================================================
+// Tools - Functions - Class Generator
+//====================================================
+
+// Creates a Cactus unit class
+
+@mixin unit-class-generator($name, $unit-ratio) {
+  @if $unit-ratio {
+    $numerator: nth($unit-ratio, 1);
+    $denominator: nth($unit-ratio, 2);
+
+    .#{calculate-classname($name, $numerator, $denominator)} {
+      width: calculate-unit-width($numerator, $denominator);
+    }
+  }
+
+  @else {
+    @warn "You must pass a $unit-ratio."
+  }
+}

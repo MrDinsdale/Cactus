@@ -1,0 +1,17 @@
+// ====================================================
+// Cactus - Settings - Debug
+// ====================================================
+
+// Enable debug mode to highlight elements.
+$cactus-debug-enabled: false !default;
+
+// Debug Colours
+//====================================================
+
+$cactus-debug-colours: (
+  blue: #50abd2,
+  green: #78b653,
+  yellow: #cad04f,
+  orange: #ed913d,
+  red: #e8182e
+) !default;

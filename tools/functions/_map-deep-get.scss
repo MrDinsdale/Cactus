@@ -1,0 +1,13 @@
+//====================================================
+// Tools - Functions - Map Deep Get
+//====================================================
+
+// @author Hugo Giraudel
+// Access nestest map values.
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
