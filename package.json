@@ -5,7 +5,8 @@
   "main": "application.scss",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/sass.js",
-    "lint": "stylelint ./**/*.scss --syntax scss"
+    "lint": "stylelint ./**/*.scss --syntax scss",
+    "build": "node-sass --output-style compressed --precision 9 application.scss > build/cactus-framework.css"
   },
   "pre-commit": [
     "lint",
@@ -33,6 +34,7 @@
     "pre-commit": "^1.1.3",
     "sass-true": "^2.1.3",
     "stylelint": "^7.5.0",
-    "stylelint-selector-bem-pattern": "^1.0.0"
+    "stylelint-selector-bem-pattern": "^1.0.0",
+    "node-sass": "^3.13.0"
   }
 }

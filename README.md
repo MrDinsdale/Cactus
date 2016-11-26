@@ -10,13 +10,16 @@ To include in your project run the following:
 
 Then integrate in to your build pipeline.
 
-
 ## Testing
 Cactus has a suite of automated tests, to run:
 `npm run test`
 
 For linting run:
 `npm run lint`
+
+## Build
+To build a static CSS version of Cactus run:
+`npm run build`
 
 
 ## Cactus Structure
