@@ -4,15 +4,33 @@
 
 Cactus is a very minimal but flexible CSS grid framework powered by Scss. Rather than defining a list of potential column widths, Cactus lets you define your own and automatically generates the classes for you.
 
+## Installation
+To include in your project run the following:
+`npm install cactus-framework --save`
+
+Then integrate in to your build pipeline.
+
+
+## Testing
+Cactus has a suite of automated tests, to run:
+`npm run test`
+
+For linting run:
+`npm run lint`
+
+
+## Cactus Structure
+Cactus is structured acording to ITCSS, this allows separation of concerns and gives greater context for what each class is used for. For more information checkout this [blog post on ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture).
+
 
 ## Cactus Classes
 Cactus makes use of BEM like naming convention for classes making for far more readable markup, if you're not familiar it stands for Block Element Modifier. It follows this basic structure:
 
 ``` scss
-.block {}
-.block__element {}
-.block--modifier {}
-.block__element--modifier {}
+.prefix-block {}
+.prefix-block__element {}
+.prefix-block--modifier {}
+.prefix-block__element--modifier {}
 ```
 
 For more information have a look at [MindBEMding - Getting your head round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) by Harry Roberts, it's a great read!

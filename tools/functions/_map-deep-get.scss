@@ -1,9 +1,10 @@
-/// Map deep get
-/// @author Hugo Giraudel
-/// @access public
-/// @param {Map} $map - Map
-/// @param {Arglist} $keys - Key chain
-/// @return {*} - Desired value
+//====================================================
+// Tools - Functions - Map Deep Get
+//====================================================
+
+// @author Hugo Giraudel
+// Access nestest map values.
+
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
     $map: map-get($map, $key);
