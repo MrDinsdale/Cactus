@@ -18,9 +18,13 @@
   vertical-align: top;
 }
 
-// Loop through all the breakpoints defined in `$cactus-breakpoint-config`
+// Loop through all the breakpoints defined in `$cactus-unit-config`
 
-@each $bp in $cactus-breakpoint-config {
+// Fetch keys for easy looping
+$cactus-unit-keys: map-keys($cactus-unit-config);
+
+// Loop through keys and generate classes
+@each $bp in $cactus-unit-keys {
   $bp-name: map-deep-get($cactus-unit-config, $bp, "name");
   $bp-breakpoint: map-deep-get($cactus-unit-config, $bp, "breakpoint");
   $bp-units: map-deep-get($cactus-unit-config, $bp, "units");
