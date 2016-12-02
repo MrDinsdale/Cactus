@@ -2,6 +2,8 @@
 // Cactus - Objects - Grid - Unit
 //====================================================
 
+$default-gutter-width: map-get(map-get($cactus-gutter-config, sizes), default);
+
 // The unit acts like a column with percentage width of its parent. It should
 // always be the direct decendant a `.cactus__g` element.
 
@@ -10,11 +12,11 @@
  * .cactus__u--1-5    // 1/5th width unit (20%)
  */
 
-[class *= "o-#{$cactus-prefix}__u"] {
+[class *= 'o-#{$cactus-prefix}__u'] {
   display: inline-block;
-  font-size: $cactus-base-font-size;
-  padding-left: usable-gutter(map-get(map-get($cactus-gutter-config, sizes), default));
-  padding-right: usable-gutter(map-get(map-get($cactus-gutter-config, sizes), default));
+  font-size: $cactus-base-font-size; // Re asign font-size
+  padding-left: usable-gutter($default-gutter-width);
+  padding-right: usable-gutter($default-gutter-width);
   vertical-align: top;
 }
 
@@ -25,9 +27,9 @@ $cactus-unit-keys: map-keys($cactus-unit-config);
 
 // Loop through keys and generate classes
 @each $bp in $cactus-unit-keys {
-  $bp-name: map-deep-get($cactus-unit-config, $bp, "name");
-  $bp-breakpoint: map-deep-get($cactus-unit-config, $bp, "breakpoint");
-  $bp-units: map-deep-get($cactus-unit-config, $bp, "units");
+  $bp-name: map-deep-get($cactus-unit-config, $bp, 'name');
+  $bp-breakpoint: map-deep-get($cactus-unit-config, $bp, 'breakpoint');
+  $bp-units: map-deep-get($cactus-unit-config, $bp, 'units');
 
   // If no breakpoint is defined, don't wrap in media query i.e.
   //    .o-cactus--1-2

@@ -5,7 +5,7 @@
 // `.o-cactus__g` is required to offset the unit gutters etc. All unit classes
 // should be wrapped by the group element
 
-[class*="o-#{$cactus-prefix}__g"] {
+[class*='o-#{$cactus-prefix}__g'] {
   display: -webkit-flex;
   -webkit-flex-flow: row wrap;
   display: -ms-flexbox;
@@ -50,7 +50,7 @@
     margin-left: 0;
     margin-right: 0;
 
-    > [class *= "o-#{$cactus-prefix}__u"] {
+    > [class *= 'o-#{$cactus-prefix}__u'] {
       padding-left: 0;
       padding-right: 0;
     }

@@ -1,6 +1,6 @@
 {
   "name": "cactus-framework",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Light weight CSS framework based on ITCSS, BEM and Scss.",
   "main": "application.scss",
   "scripts": {
