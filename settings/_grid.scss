@@ -43,34 +43,26 @@ $cactus-gutter-config: (
 //====================================================
 
 // Map of each breakpoint, with name, width (em) and array of unit size ratios.
-$cactus-unit-ratio-default: 1 1, 1 2, 1 3, 2 3, 1 4, 3 4 !default;
-$cactus-unit-ratio-medium: 1 1, 1 2, 1 3, 2 3 !default;
-
-$cactus-breakpoint-config: (
-  default,
-  medium,
-  small
-) !default;
 
 $cactus-unit-config: (
   default: (
     name: false,
     breakpoint: false,
-    units: $cactus-unit-ratio-default
+    units: (1 1, 1 2, 1 3, 2 3, 1 4, 3 4)
   ),
   large: (
-    name: m,
+    name: l,
     breakpoint: 75em,
-    units: $cactus-unit-ratio-default
+    units: (1 1, 1 2, 1 3, 2 3, 1 4, 3 4)
   ),
   medium: (
     name: m,
     breakpoint: 56em,
-    units: $cactus-unit-ratio-medium
+    units: (1 1, 1 2, 1 3, 2 3)
   ),
   small: (
     name: s,
     breakpoint: 32em,
-    units: $cactus-unit-ratio-medium
+    units: (1 1, 1 2)
   )
 ) !default;
