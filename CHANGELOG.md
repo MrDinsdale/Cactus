@@ -2,6 +2,7 @@
 
 ## Improvements
 
+* Removed dependency on `$cactus-breakpoint-config` to list required breakpoint keys.
 * Streamlined unit gutter generation to avoid repetition.
 * Restructured objects to avoid nesting.
 * Included Normalize 5.0.
