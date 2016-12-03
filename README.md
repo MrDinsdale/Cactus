@@ -1,4 +1,4 @@
-![Cactus Logo](http://joedinsdale.co.uk/misc/cactus-logo.png)
+![Cactus Logo](https://cloud.githubusercontent.com/assets/2472440/20855616/45043afc-b8f7-11e6-8482-610e53c34f04.png)
 
 # Cactus CSS Framework
 
