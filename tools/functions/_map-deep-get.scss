@@ -3,7 +3,7 @@
 //====================================================
 
 // @author Hugo Giraudel
-// Access nestest map values.
+// Access nestesd map values.
 
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
